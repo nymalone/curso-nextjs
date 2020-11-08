@@ -55,3 +55,10 @@ export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
       }
      }
 }
+
+// não devo usar o getServerSideProps para toda ocasião! só vou utilizar quando eu precisar uma informação que é dinãmica ("listagem api") 
+// que precisa estar disponível e indexadas para os motores de busca!
+// pq se eu ficar utilizando o getServerSideProps para qualquer coisa a tela toda pode demorar para aparecer, 
+// o que chamamos de TTFB (time to first bite) que se demorar não é uma exp boa para o usuário
+
+// TTFB com o client side fetching é muito menor, para o usuário é bom, mas para o motor de busca não 
