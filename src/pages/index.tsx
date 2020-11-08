@@ -62,3 +62,5 @@ export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
 // o que chamamos de TTFB (time to first bite) que se demorar não é uma exp boa para o usuário
 
 // TTFB com o client side fetching é muito menor, para o usuário é bom, mas para o motor de busca não 
+
+
