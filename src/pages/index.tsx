@@ -22,6 +22,8 @@ export default function Home({ recommendedProducts }: IHomeProps) {
   //     })
   //   })
   // }, []);
+
+  console.log(process.env.NEXT_PUBLIC_API_URL)
   
   async function handleSum() {
     const math = (await import('../lib/math')).default;
@@ -53,7 +55,7 @@ export default function Home({ recommendedProducts }: IHomeProps) {
 // vai buscar algum tipo de dado e vai retornar para o componente através de propriedades 
 // então eu posso acessar qualquer coisa que é retornado dessa função nas minhas props 
 export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
-     const response = await fetch('http://localhost:3334/recommended')
+     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recommended`)
      const recommendedProducts = await response.json();
 
      return {
